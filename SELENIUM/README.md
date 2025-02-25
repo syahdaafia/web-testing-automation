@@ -23,7 +23,8 @@ Proyek ini memiliki beberapa folder utama:
 │   │   │   ├── 📂 org.syahdaafia.pages  # Page Object Model (POM)
 │   │   │   │   ├── 📄 LoginPage.java  # Halaman login, menangani input & tombol login
 │   │   │   │   ├── 📄 InventoryPage.java  # Halaman produk & keranjang belanja
-│   │   ├── 📂 resources  # Folder resource tambahan jika diperlukan
+│   │   ├── 📂 resources  # Folder untuk menyimpan resource tambahan
+│   │   │   ├── 📄 driver.exe  # WebDriver untuk menjalankan browser (misalnya, ChromeDriver)
 │   ├── 📂 test  
 │   │   ├── 📂 java  
 │   │   │   ├── 📂 hooks  # Konfigurasi sebelum & sesudah pengujian
@@ -55,7 +56,10 @@ git clone https://github.com/username/saucedemo-selenium.git
 cd saucedemo-selenium
 ```
 
-### 3️⃣ Build dan Jalankan Pengujian  
+### 3️⃣ Konfigurasi WebDriver  
+Pastikan `driver.exe` (misalnya, `chromedriver.exe`) tersedia di **src/main/resources**. Jika perlu, unduh versi terbaru dari [ChromeDriver](https://chromedriver.chromium.org/downloads) dan simpan di lokasi yang sesuai.
+
+### 4️⃣ Build dan Jalankan Pengujian  
 Jalankan perintah berikut untuk mengeksekusi pengujian dengan Maven:  
 ```sh
 mvn clean test
@@ -80,4 +84,3 @@ Perintah ini akan menjalankan semua skenario pengujian dan menampilkan hasilnya 
 - **JUnit** → Menjalankan pengujian dan validasi hasil.  
 - **Java 8+** → Bahasa pemrograman utama dalam proyek ini.  
 - **Maven** → Manajemen dependensi dan eksekusi pengujian.  
-```
