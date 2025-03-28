@@ -24,19 +24,23 @@ jobs:
           java-version: '17'
 
       - name: Set Up Chrome
-        uses: browser-actions/setup-chrome@v1
+        run: |
+          sudo apt update
+          sudo apt install -y google-chrome-stable
+          google-chrome --version
 
-      - name: Verify Chrome Installation
-        run: google-chrome --version
-
-      - name: Set Up ChromeDriver
-        uses: nanasess/setup-chromedriver@v2
-        with:
-          chromedriver-version: 'latest'
-
-      - name: Verify ChromeDriver Installation
-        run: chromedriver --version
+      - name: Set Up ChromeDriver (Manual)
+        run: |
+          CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d'.' -f1)
+          echo "Detected Chrome version: $CHROME_VERSION"
+          DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)
+          echo "Downloading ChromeDriver version: $DRIVER_VERSION"
+          wget -N https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          chmod +x chromedriver
+          sudo mv chromedriver /usr/local/bin/
+          chromedriver --version
 
       - name: Build and Run Tests
-        working-directory: selenium  # Pindah ke folder selenium sebelum menjalankan perintah
+        working-directory: selenium
         run: mvn clean test
