@@ -1,0 +1,42 @@
+name: Selenium UI Testing
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  selenium-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set Up Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Verify Chrome Installation
+        run: google-chrome --version
+
+      - name: Set Up ChromeDriver
+        uses: nanasess/setup-chromedriver@v2
+        with:
+          chromedriver-version: 'latest'
+
+      - name: Verify ChromeDriver Installation
+        run: chromedriver --version
+
+      - name: Build and Run Tests
+        working-directory: selenium  # Pindah ke folder selenium sebelum menjalankan perintah
+        run: mvn clean test
