@@ -48,10 +48,13 @@ jobs:
           echo "Downloading ChromeDriver from: $DRIVER_URL"
           wget -N "$DRIVER_URL" -O chromedriver_linux64.zip
           unzip chromedriver_linux64.zip
-          chmod +x chromedriver
-          sudo mv chromedriver /usr/local/bin/
+
+          # Perbaikan: Akses file dari folder yang benar
+          chmod +x chromedriver-linux64/chromedriver
+          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
           chromedriver --version
 
       - name: Build and Run Tests
         working-directory: selenium
         run: mvn clean test
+ 
