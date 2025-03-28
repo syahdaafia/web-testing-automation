@@ -23,19 +23,30 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Set Up Chrome
+      - name: Install Dependencies
         run: |
           sudo apt update
-          sudo apt install -y google-chrome-stable
-          google-chrome --version
+          sudo apt install -y google-chrome-stable jq
 
-      - name: Set Up ChromeDriver (Manual)
+      - name: Verify Chrome Version
+        run: google-chrome --version
+
+      - name: Set Up ChromeDriver (Chrome for Testing)
         run: |
-          CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d'.' -f1)
+          CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
           echo "Detected Chrome version: $CHROME_VERSION"
-          DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)
-          echo "Downloading ChromeDriver version: $DRIVER_VERSION"
-          wget -N https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip
+
+          # Dapatkan URL ChromeDriver yang sesuai
+          DRIVER_URL=$(curl -sS https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json | \
+            jq -r '.versions[] | select(.version=="'"$CHROME_VERSION"'") | .downloads.chromedriver[] | select(.platform=="linux64") | .url')
+
+          if [ -z "$DRIVER_URL" ]; then
+            echo "No matching ChromeDriver found for Chrome version $CHROME_VERSION"
+            exit 1
+          fi
+
+          echo "Downloading ChromeDriver from: $DRIVER_URL"
+          wget -N "$DRIVER_URL" -O chromedriver_linux64.zip
           unzip chromedriver_linux64.zip
           chmod +x chromedriver
           sudo mv chromedriver /usr/local/bin/
