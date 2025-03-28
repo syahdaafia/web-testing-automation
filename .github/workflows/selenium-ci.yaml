@@ -55,6 +55,6 @@ jobs:
           chromedriver --version
 
       - name: Build and Run Tests
-        working-directory: selenium
+        working-directory: SELENIUM
         run: mvn clean test
  
