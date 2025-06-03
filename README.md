@@ -11,7 +11,7 @@ Repositori ini berisi dua proyek pengujian otomatis (UI dan E2E) menggunakan dua
 .
 ├── selenium/       # Pengujian UI dengan Selenium + Java + Cucumber
 ├── playwright/     # Pengujian E2E dengan Playwright + JavaScript + Cucumber
-├── README.md       # Penjelasan umum repositori ( _file_ ini)
+├── README.md       # Penjelasan umum repositori (file ini)
 ```
 
 ---
