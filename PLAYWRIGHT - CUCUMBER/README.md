@@ -72,7 +72,7 @@ npm run cucumber:validation
 
 ---
 
-## 📊 Report
+## 📊 _Report_
 
 Setiap hasil test akan diekspor ke dalam _file_:
 
