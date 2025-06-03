@@ -1,0 +1,21 @@
+{
+  "name": "8-playwright-with-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cucumber:regression":"npx cucumber-js features/e2e_purchase_and_order_history.feature --tags @regression --parallel 2 --format html:cucumber-report.html --retry 1",
+    "cucumber:validation":"npx cucumber-js features/e2e_purchase_and_order_history.feature --tags @validation --format html:cucumber-report.html --retry 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.29"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^11.3.0"
+  }
+}
