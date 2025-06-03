@@ -1,37 +1,19 @@
-# 🧪 E2E Testing - Purchase & Order History
+# 🧪 E2E Testing - _Purchase & Order History_
 
-Proyek ini merupakan implementasi **end-to-end testing** menggunakan **Playwright** dan **Cucumber** untuk memverifikasi fitur pembelian produk dan riwayat pesanan pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
-
----
-
-## 🗂️ Struktur Fitur yang Diuji
-
-### 1. `@regression`: End-to-End Purchase Flow
-
-* Login
-* Tambah produk ke keranjang
-* Checkout
-* Konfirmasi pesanan
-* Lihat detail order dari halaman riwayat
-
-### 2. `@validation`: Validasi Penghapusan Produk
-
-* Login
-* Tambah produk
-* Hapus produk dari keranjang
-* Validasi keranjang kosong
+Proyek ini merupakan implementasi _**end-to-end testing** _menggunakan **Playwright** dan **Cucumber** untuk memverifikasi fitur pembelian produk dan riwayat pesanan pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
 
 ---
 
-## 📁 Struktur Proyek
+## 🗂️ Struktur Direktori
 
 ```
 ├── features/
-│   └── e2e_purchase_and_order_history.feature  # File Gherkin (Cucumber)
-├── step-definitions/
-│   └── purchaseStepDefs.js                    # Step definitions Cucumber
-├── hooks/
-│   └── hooks.js                               # Before & After scenarios
+│   ├── step_definitions/
+│   │   └── e2e_purchase_and_order_history.js      # Step definitions Cucumber
+│   ├── support/
+│   │   └── hooks.js                               # Before & After hooks
+│   └── e2e_purchase_and_order_history.feature     # File Gherkin
+│
 ├── page_object/
 │   ├── CartPage.js
 │   ├── CheckoutPage.js
@@ -40,31 +22,49 @@ Proyek ini merupakan implementasi **end-to-end testing** menggunakan **Playwrigh
 │   ├── LoginPage.js
 │   ├── OrderHistoryPage.js
 │   └── PageObjectManager.js
+│
+├── cucumber-report.html                           # Hasil report HTML
+├── .gitignore
 ├── package.json
-└── README.md
+├── package-lock.json
 ```
 
 ---
 
-## ▶️ Menjalankan Test
+## 🧪 Fitur yang Diuji
 
-Pastikan kamu sudah menginstall dependency:
+### 1. `@regression`: Alur Pembelian _End-to-End_
+
+* _Login_
+* Tambahkan produk ke keranjang
+* Lakukan _checkout_
+* Konfirmasi pesanan
+* Validasi detail pesanan di halaman riwayat
+
+### 2. `@validation`: Validasi Penghapusan Produk dari Keranjang
+
+* _Login_
+* Tambah produk ke keranjang
+* Hapus produk dari keranjang
+* Validasi keranjang kosong
+
+---
+
+## ▶️ Menjalankan _Test_
+
+_Install dependencies_:
 
 ```bash
 npm install
 ```
 
-### 🔁 Regression Test:
-
-Menjalankan skenario end-to-end lengkap:
+### Menjalankan _Regression Test_:
 
 ```bash
 npm run cucumber:regression
 ```
 
-### 🧹 Validation Test:
-
-Menjalankan skenario validasi penghapusan produk:
+### Menjalankan _Validation Test:_
 
 ```bash
 npm run cucumber:validation
@@ -74,7 +74,7 @@ npm run cucumber:validation
 
 ## 📊 Report
 
-Hasil dari setiap test akan tersimpan dalam format **HTML** di file:
+Setiap hasil test akan diekspor ke dalam _file_:
 
 ```
 cucumber-report.html
@@ -82,7 +82,7 @@ cucumber-report.html
 
 ---
 
-## 🧱 Teknologi yang Digunakan
+## 🔧 _Tools_ & Teknologi
 
 * [Playwright](https://playwright.dev/)
 * [Cucumber.js](https://github.com/cucumber/cucumber-js)
@@ -90,8 +90,11 @@ cucumber-report.html
 
 ---
 
-## 💡 Catatan
+## 📌 Catatan
 
-* Test akan berjalan dalam **headful mode** (browser terlihat).
-* Screenshot otomatis diambil ketika step gagal.
-* Order Number dari halaman konfirmasi digunakan untuk memverifikasi data di halaman order history.
+* _Test_ berjalan dalam _**headful mode**_.
+* _Screenshot_ otomatis diambil jika _step_ gagal.
+
+---
+
+
