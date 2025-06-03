@@ -32,7 +32,7 @@ Proyek ini mengotomatiskan pengujian UI pada situs [Saucedemo](https://www.sauce
 - Selenium WebDriver
 - Cucumber + JUnit
 
-➡️ [Buka Folder `selenium/`](./selenium)
+➡️ [Buka Folder `SELENIUM`](https://github.com/syahdaafia/web-testing-automation/tree/main/SELENIUM)
 
 ---
 
@@ -50,7 +50,7 @@ Proyek ini mengimplementasikan pengujian _end-to-end_ pada situs [rahulshettyaca
 - Playwright
 - Cucumber.js
 
-➡️ [Buka Folder `playwright/`](./playwright)
+➡️ [Buka Folder `PLAYWRIGHT - CUCUMBER`](https://github.com/syahdaafia/web-testing-automation/tree/main/PLAYWRIGHT%20-%20CUCUMBER)
 
 ---
 
