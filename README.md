@@ -1,5 +1,5 @@
 
-# Web Automation Testing Projects
+# 🕸️ _Web Automation Testing Projects_
 
 Repositori ini berisi dua proyek pengujian otomatis (UI dan E2E) menggunakan dua teknologi berbeda: **Selenium (Java)** dan **Playwright (JavaScript)**. Masing-masing proyek terpisah dalam direktori yang berbeda dan menguji aplikasi web berbeda pula.
 
