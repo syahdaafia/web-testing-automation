@@ -1,6 +1,6 @@
 # 🧪 E2E _Testing_ - _Purchase & Order History_
 
-Proyek ini merupakan implementasi _**end-to-end testing** _menggunakan **Playwright** dan **Cucumber** untuk memverifikasi fitur pembelian produk dan riwayat pesanan pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
+Proyek ini merupakan implementasi _**end-to-end testing**_ menggunakan **Playwright** dan **Cucumber** untuk memverifikasi fitur pembelian produk dan riwayat pesanan pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
 
 ---
 
