@@ -67,7 +67,7 @@ npx cypress open
 
 ---
 
-_## 📊 Report_
+## 📊 _Report_
 
 Setiap hasil _test_ akan diekspor ke dalam _file_:
 
@@ -77,7 +77,7 @@ Buka _file_ tersebut di _browser_ untuk melihat hasil visualisasi _test_.
 
 ---
 
-## 🔧_ Tools_ & Teknologi
+## 🔧 _Tools_ & Teknologi
 
 * **Cypress**
 * **Cucumber (cypress-cucumber-preprocessor)**
