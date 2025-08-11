@@ -1,0 +1,89 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "end-to-end-ecommerce-validation;successful-product-purchase-and-checkout",
+        "keyword": "Scenario Outline",
+        "line": 12,
+        "name": "Successful product purchase and checkout",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User is on the landing page",
+            "match": {
+              "location": "cypress/e2e/features/ecommerce/ecommercesSteps.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3665000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "User logs in with \"rahulshettyacademy\" and \"learning\"",
+            "match": {
+              "location": "cypress/e2e/features/ecommerce/ecommercesSteps.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2666000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "User adds \"Nokia Edge\" and \"iphone X\" to the cart",
+            "match": {
+              "location": "cypress/e2e/features/ecommerce/ecommercesSteps.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15432000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "User checks out the items",
+            "match": {
+              "location": "cypress/e2e/features/ecommerce/ecommercesSteps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 287000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Success message should appear on the screen",
+            "match": {
+              "location": "cypress/e2e/features/ecommerce/ecommercesSteps.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6791000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "end-to-end-ecommerce-validation",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "End-to-End Ecommerce Validation",
+    "tags": [],
+    "uri": "cypress\\e2e\\features\\ecommerce.feature"
+  }
+]
