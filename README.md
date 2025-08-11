@@ -8,15 +8,15 @@ Repositori ini berisi tiga proyek pengujian otomatis (UI dan E2E) menggunakan te
 
 ```
 .
-├── SELENIUM/       # Pengujian UI dengan Selenium + Java + Cucumber
-├── PLAYWRIGHT - CUCUMBER/     # Pengujian E2E dengan Playwright + JavaScript + Cucumber
-├── CYPRESS - CUCUMBER/        # Pengujian E2E dengan Cypress + JavaScript + Cucumber
+├── SELENIUM       # Pengujian UI dengan Selenium + Java + Cucumber
+├── PLAYWRIGHT - CUCUMBER     # Pengujian E2E dengan Playwright + JavaScript + Cucumber
+├── CYPRESS - CUCUMBER        # Pengujian E2E dengan Cypress + JavaScript + Cucumber
 ├── README.md       # Penjelasan umum repositori (file ini)
 ```
 
 ---
 
-## 🔹 Proyek: Selenium UI Testing (`/selenium`)
+## 🔹 Proyek: Selenium UI Testing (`/SELENIUM`)
 
 ### 📌 Deskripsi
 
@@ -39,7 +39,7 @@ Proyek ini mengotomatiskan pengujian UI pada situs [Saucedemo](https://www.sauce
 
 ---
 
-## 🔹 Proyek: Playwright E2E Testing (`/playwright`)
+## 🔹 Proyek: Playwright E2E Testing (`/PLAYWRIGHT - CUCUMBER`)
 
 ### 📌 Deskripsi
 
@@ -60,7 +60,7 @@ Proyek ini mengimplementasikan pengujian *end-to-end* pada situs [rahulshettyaca
 
 ---
 
-## 🔹 Proyek: Cypress E2E Testing (`/cypress`)
+## 🔹 Proyek: Cypress E2E Testing (`/CYPRESS - CUCUMBER`)
 
 ### 📌 Deskripsi
 
