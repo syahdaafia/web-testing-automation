@@ -35,7 +35,7 @@ Proyek ini merupakan implementasi *end-to-end testing* menggunakan **Playwright*
 
 1. **@regression**: *End-to-End Purchase Flow*
 
-   * Login
+   * _Login_
    * Tambahkan produk ke keranjang
    * Lakukan *checkout*
    * Konfirmasi pesanan
@@ -43,16 +43,16 @@ Proyek ini merupakan implementasi *end-to-end testing* menggunakan **Playwright*
 
 2. **@validation**: Validasi Penghapusan Produk dari Keranjang
 
-   * Login
+   * _Login_
    * Tambah produk ke keranjang
    * Hapus produk dari keranjang
    * Validasi keranjang kosong
 
 ---
 
-## ▶️ Cara Menjalankan Test
+## ▶️ Cara Menjalankan _Test_
 
-1. Install *dependencies* terlebih dahulu:
+1. _Install_ *dependencies* terlebih dahulu:
 
 ```bash
 npm install
@@ -72,15 +72,15 @@ npm run cucumber:validation
 
 ---
 
-## 📊 Report
+## 📊 _Report_
 
-Setiap hasil test akan diekspor ke dalam file:
+Setiap hasil _test_ akan diekspor ke dalam _file_:
 
 * `cucumber-report.html`
 
 ---
 
-## 🔧 Tools & Teknologi
+## 🔧 _Tools_ & Teknologi
 
 * Playwright
 * Cucumber.js
@@ -90,9 +90,5 @@ Setiap hasil test akan diekspor ke dalam file:
 
 ## 📌 Catatan
 
-* Test dijalankan dalam *headful mode* (bukan *headless*).
-* Screenshot otomatis diambil jika ada step yang gagal.
-
----
-
-Kalau kamu mau, aku juga bisa bantu buatkan contoh script package.json-nya atau konfigurasi Playwright/Cucumber-nya ya!
+* _Test_ dijalankan dalam *headful mode* (bukan *headless*).
+* _Screenshot_ otomatis diambil jika ada _step_ yang gagal.
