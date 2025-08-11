@@ -1,6 +1,6 @@
-# 🧪 E2E Testing - Ecommerce Product Purchase
+# 🧪 E2E Testing - _Ecommerce Product Purchase_
 
-Proyek ini merupakan implementasi **end-to-end testing** menggunakan **Cypress** dan **Cucumber** untuk memverifikasi fitur pembelian produk pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
+Proyek ini merupakan implementasi _**end-to-end testing**_ menggunakan **Cypress** dan **Cucumber** untuk memverifikasi fitur pembelian produk pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
 
 ---
 
@@ -15,70 +15,69 @@ cypress-cucumber/
 │   ├── downloads/                            # Folder untuk hasil unduhan (jika ada)
 │   ├── e2e/
 │   │   ├── features/
+│   │   │   ├── ecommerce.feature             # File Gherkin (feature utama)
 │   │   │   └── ecommerce/
-│   │   │       ├── ecommerce.feature         # File Gherkin (feature)
-│   │   │       └── ecommerceSteps.js         # Step definitions
+│   │   │       └── ecommerceSteps.js        # Step definitions untuk feature
 │   │   └── support/
 │   │       └── hooks.js                      # Before & After hooks
 │   ├── fixtures/                             # Static test data (jika digunakan)
 │   └── support/
 │       ├── commands.js                       # Custom commands
-│       ├── e2e.js                            # File entry point untuk tests
+│       ├── e2e.js                            # Entry point untuk test
 │       └── pageObjects/
 │           ├── CartPage.js
 │           ├── ConfirmationPage.js
 │           ├── HomePage.js
 │           ├── ProductPage.js
 ├── package.json
-├── .gitignore
 ```
 
 ---
 
 ## 🧪 Fitur yang Diuji
 
-### 1. @regression: Alur Pembelian Produk End-to-End
+### 1. Alur Pembelian Produk _End-to-End_
 
-* Login ke aplikasi
+* _Login_ ke aplikasi
 * Menambahkan dua produk ke keranjang
-* Melakukan checkout
+* Melakukan _checkout_
 * Validasi pesan sukses muncul setelah pembelian
 
 ---
 
-## ▶️ Menjalankan Test
+## ▶️ Menjalankan _Test_
 
-### Install dependencies
+### _Install dependencies_
 
 ```bash
 npm install
 ```
 
-### Menjalankan Regression Test
+### Menjalankan _Test_
 
 ```bash
 npx cypress run
 ```
 
-> Atau jika ada script yang sudah didefinisikan di `package.json`:
+Untuk menjalankan dalam mode GUI (interaktif):
 
 ```bash
-npm run cucumber:regression
+npx cypress open
 ```
 
 ---
 
-## 📊 Report
+## 📊 _Report_
 
-Setiap hasil test akan diekspor dalam file berikut:
+Setiap hasil _test_ akan diekspor ke dalam _file_:
 
 * `cypress/cucumber-reports/cucumber-htmlreport.html`
 
-Bisa dibuka di browser untuk melihat hasil visualisasi test.
+Buka _file_ tersebut di _browser_ untuk melihat hasil visualisasi _test_.
 
 ---
 
-## 🔧 Tools & Teknologi
+## 🔧 _Tools_ & Teknologi
 
 * **Cypress**
 * **Cucumber (cypress-cucumber-preprocessor)**
@@ -88,8 +87,8 @@ Bisa dibuka di browser untuk melihat hasil visualisasi test.
 
 ## 📌 Catatan
 
-* Test berjalan dalam **browser mode** (headful/headless bisa diatur).
-* Struktur test menggunakan **Gherkin syntax** untuk readability.
-* Screenshot otomatis dan log error bisa dikonfigurasi pada hook `After`.
+* _Test_ dapat dijalankan dalam _**headless**_ atau _**headful mode**._
+* Penulisan _test_ menggunakan **Gherkin syntax** agar mudah dibaca oleh semua pihak_ (technical & non-technical)_.
+* _Screenshot_ otomatis dan _error logging_ bisa dikonfigurasi pada `hooks.js`.
 
-
+---
