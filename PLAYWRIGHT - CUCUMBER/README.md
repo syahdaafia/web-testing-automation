@@ -1,100 +1,84 @@
-# 🧪 E2E _Testing_ - _Purchase & Order History_
+# 🧪 E2E Testing - Ecommerce Product Purchase
 
-Proyek ini merupakan implementasi _**end-to-end testing**_ menggunakan **Playwright** dan **Cucumber** untuk memverifikasi fitur pembelian produk dan riwayat pesanan pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
+Proyek ini merupakan implementasi **end-to-end testing** menggunakan **Cypress** dan **Cucumber** untuk memverifikasi fitur pembelian produk pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
 
 ---
 
 ## 🗂️ Struktur Direktori
 
 ```
-├── features/
-│   ├── step_definitions/
-│   │   └── e2e_purchase_and_order_history.js      # Step definitions Cucumber
-│   ├── support/
-│   │   └── hooks.js                               # Before & After hooks
-│   └── e2e_purchase_and_order_history.feature     # File Gherkin
-│
-├── page_object/
-│   ├── CartPage.js
-│   ├── CheckoutPage.js
-│   ├── ConfirmationPage.js
-│   ├── DashboardPage.js
-│   ├── LoginPage.js
-│   ├── OrderHistoryPage.js
-│   └── PageObjectManager.js
-│
-├── cucumber-report.html                           # Hasil report HTML
-├── .gitignore
+cypress-cucumber/
+├── cypress/
+│   ├── cucumber-reports/
+│   │   ├── cucumber-htmlreport.html          # Report hasil test
+│   │   └── results.json                      # Data hasil test dalam JSON
+│   ├── downloads/                            # Folder untuk hasil unduhan (jika ada)
+│   ├── e2e/
+│   │   ├── features/
+│   │   │   ├── ecommerce.feature             # File Gherkin (feature utama)
+│   │   │   └── ecommerce/
+│   │   │       └── ecommerceSteps.js        # Step definitions untuk feature
+│   │   └── support/
+│   │       └── hooks.js                      # Before & After hooks
+│   ├── fixtures/                             # Static test data (jika digunakan)
+│   └── support/
+│       ├── commands.js                       # Custom commands
+│       ├── e2e.js                            # Entry point untuk test
+│       └── pageObjects/
+│           ├── CartPage.js
+│           ├── ConfirmationPage.js
+│           ├── HomePage.js
+│           ├── ProductPage.js
 ├── package.json
-├── package-lock.json
 ```
 
 ---
 
 ## 🧪 Fitur yang Diuji
 
-### 1. `@regression`: Alur Pembelian _End-to-End_
+### 1. Alur Pembelian Produk End-to-End
 
-* _Login_
-* Tambahkan produk ke keranjang
-* Lakukan _checkout_
-* Konfirmasi pesanan
-* Validasi detail pesanan di halaman riwayat
-
-### 2. `@validation`: Validasi Penghapusan Produk dari Keranjang
-
-* _Login_
-* Tambah produk ke keranjang
-* Hapus produk dari keranjang
-* Validasi keranjang kosong
+* Login ke aplikasi
+* Menambahkan dua produk ke keranjang
+* Melakukan checkout
+* Validasi pesan sukses muncul setelah pembelian
 
 ---
 
-## ▶️ Menjalankan _Test_
+## ▶️ Menjalankan Test
 
-_Install dependencies_:
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-### Menjalankan _Regression Test_:
+### Menjalankan Test
 
 ```bash
-npm run cucumber:regression
+npx cypress run
 ```
 
-### Menjalankan _Validation Test:_
+Untuk menjalankan dalam mode GUI (interaktif):
 
 ```bash
-npm run cucumber:validation
+npx cypress open
 ```
 
 ---
 
-## 📊 _Report_
+## 📊 Report
 
-Setiap hasil test akan diekspor ke dalam _file_:
+Setiap hasil test akan diekspor ke dalam file:
 
-```
-cucumber-report.html
-```
+* `cypress/cucumber-reports/cucumber-htmlreport.html`
 
----
-
-## 🔧 _Tools_ & Teknologi
-
-* [Playwright](https://playwright.dev/)
-* [Cucumber.js](https://github.com/cucumber/cucumber-js)
-* JavaScript (ES Modules)
+Buka file tersebut di browser untuk melihat hasil visualisasi test.
 
 ---
 
-## 📌 Catatan
+## 🔧 Tools & Teknologi
 
-* _Test_ berjalan dalam _**headful mode**_.
-* _Screenshot_ otomatis diambil jika _step_ gagal.
-
----
-
-
+* **Cypress**
+* **Cucumber (cypress-cucumber-preprocessor)**
+* **JavaScript (ES6+)**
