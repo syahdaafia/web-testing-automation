@@ -1,94 +1,95 @@
-# 🧪 E2E Testing - _Ecommerce Product Purchase_
+# 🧪 E2E Testing - Purchase & Order History
 
-Proyek ini merupakan implementasi _**end-to-end testing**_ menggunakan **Cypress** dan **Cucumber** untuk memverifikasi fitur pembelian produk pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
+Proyek ini merupakan implementasi end-to-end testing menggunakan **Playwright** dan **Cucumber** untuk memverifikasi fitur pembelian produk dan riwayat pesanan pada situs  
+[https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
 
 ---
 
 ## 🗂️ Struktur Direktori
 
 ```
-cypress-cucumber/
-├── cypress/
-│   ├── cucumber-reports/
-│   │   ├── cucumber-htmlreport.html          # Report hasil test
-│   │   └── results.json                      # Data hasil test dalam JSON
-│   ├── downloads/                            # Folder untuk hasil unduhan (jika ada)
-│   ├── e2e/
-│   │   ├── features/
-│   │   │   ├── ecommerce.feature             # File Gherkin (feature utama)
-│   │   │   └── ecommerce/
-│   │   │       └── ecommerceSteps.js        # Step definitions untuk feature
-│   │   └── support/
-│   │       └── hooks.js                      # Before & After hooks
-│   ├── fixtures/                             # Static test data (jika digunakan)
-│   └── support/
-│       ├── commands.js                       # Custom commands
-│       ├── e2e.js                            # Entry point untuk test
-│       └── pageObjects/
-│           ├── CartPage.js
-│           ├── ConfirmationPage.js
-│           ├── HomePage.js
-│           ├── ProductPage.js
+
+├── features/
+│   ├── step\_definitions/
+│   │   └── e2e\_purchase\_and\_order\_history.js      # Step definitions Cucumber
+│   ├── support/
+│   │   └── hooks.js                               # Before & After hooks
+│   └── e2e\_purchase\_and\_order\_history.feature     # File Gherkin
+│
+├── page\_object/
+│   ├── CartPage.js
+│   ├── CheckoutPage.js
+│   ├── ConfirmationPage.js
+│   ├── DashboardPage.js
+│   ├── LoginPage.js
+│   ├── OrderHistoryPage.js
+│   └── PageObjectManager.js
+│
+├── cucumber-report.html                           # Hasil report HTML
+├── .gitignore
 ├── package.json
-```
+├── package-lock.json
+
+````
 
 ---
 
 ## 🧪 Fitur yang Diuji
 
-### 1. Alur Pembelian Produk _End-to-End_
+1. **@regression: Alur Pembelian End-to-End**  
+   - Login  
+   - Tambahkan produk ke keranjang  
+   - Lakukan checkout  
+   - Konfirmasi pesanan  
+   - Validasi detail pesanan di halaman riwayat  
 
-* _Login_ ke aplikasi
-* Menambahkan dua produk ke keranjang
-* Melakukan _checkout_
-* Validasi pesan sukses muncul setelah pembelian
+2. **@validation: Validasi Penghapusan Produk dari Keranjang**  
+   - Login  
+   - Tambah produk ke keranjang  
+   - Hapus produk dari keranjang  
+   - Validasi keranjang kosong  
 
 ---
 
-## ▶️ Menjalankan _Test_
+## ▶️ Menjalankan Test
 
-### _Install dependencies_
-
+1. Install dependencies:  
 ```bash
 npm install
-```
+````
 
-### Menjalankan _Test_
-
-```bash
-npx cypress run
-```
-
-Untuk menjalankan dalam mode GUI (interaktif):
+2. Menjalankan Regression Test:
 
 ```bash
-npx cypress open
+npm run cucumber:regression
+```
+
+3. Menjalankan Validation Test:
+
+```bash
+npm run cucumber:validation
 ```
 
 ---
 
-## 📊 _Report_
+## 📊 Report
 
-Setiap hasil _test_ akan diekspor ke dalam _file_:
-
-* `cypress/cucumber-reports/cucumber-htmlreport.html`
-
-Buka _file_ tersebut di _browser_ untuk melihat hasil visualisasi _test_.
+Setiap hasil test akan diekspor ke dalam file:
+`cucumber-report.html`
 
 ---
 
-## 🔧 _Tools_ & Teknologi
+## 🔧 Tools & Teknologi
 
-* **Cypress**
-* **Cucumber (cypress-cucumber-preprocessor)**
-* **JavaScript (ES6+)**
+* Playwright
+* Cucumber.js
+* JavaScript (ES Modules)
 
 ---
 
 ## 📌 Catatan
 
-* _Test_ dapat dijalankan dalam _**headless**_ atau _**headful mode**._
-* Penulisan _test_ menggunakan **Gherkin syntax** agar mudah dibaca oleh semua pihak_ (technical & non-technical)_.
-* _Screenshot_ otomatis dan _error logging_ bisa dikonfigurasi pada `hooks.js`.
+* Test berjalan dalam mode **headful** (terlihat UI browser).
+* Screenshot otomatis diambil jika step gagal.
 
----
+```
