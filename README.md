@@ -78,7 +78,7 @@ Proyek ini mengimplementasikan pengujian **end-to-end** menggunakan **Cypress** 
 * Cypress
 * Cucumber (`cypress-cucumber-preprocessor`)
 
-➡️ [Buka Folder `CYPRESS - CUCUMBER`](https://github.com/syahdaafia/web-testing-automation/tree/main/CYPRESS - CUCUMBER) <!-- Ganti link jika repo publik -->
+➡️ [Buka Folder `CYPRESS - CUCUMBER`](https://github.com/syahdaafia/web-testing-automation/tree/main/CYPRESS%20-%20CUCUMBER) <!-- Ganti link jika repo publik -->
 
 ---
 
