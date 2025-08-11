@@ -1,6 +1,6 @@
-# 🧪 E2E Testing - Ecommerce Product Purchase
-
-Proyek ini merupakan implementasi **end-to-end testing** menggunakan **Cypress** dan **Cucumber** untuk memverifikasi fitur pembelian produk pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
+# 🧪 E2E Testing - _Ecommerce Product Purchase
+_
+Proyek ini merupakan implementasi _**end-to-end testing**_ menggunakan **Cypress** dan **Cucumber** untuk memverifikasi fitur pembelian produk pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
 
 ---
 
@@ -36,24 +36,24 @@ cypress-cucumber/
 
 ## 🧪 Fitur yang Diuji
 
-### 1. Alur Pembelian Produk End-to-End
+### 1. Alur Pembelian Produk _End-to-End_
 
-* Login ke aplikasi
+* _Login_ ke aplikasi
 * Menambahkan dua produk ke keranjang
-* Melakukan checkout
+* Melakukan _checkout_
 * Validasi pesan sukses muncul setelah pembelian
 
 ---
 
-## ▶️ Menjalankan Test
+## ▶️ Menjalankan _Test_
 
-### Install dependencies
+### _Install dependencies_
 
 ```bash
 npm install
 ```
 
-### Menjalankan Test
+### Menjalankan _Test_
 
 ```bash
 npx cypress run
@@ -67,18 +67,28 @@ npx cypress open
 
 ---
 
-## 📊 Report
+_## 📊 Report_
 
-Setiap hasil test akan diekspor ke dalam file:
+Setiap hasil _test_ akan diekspor ke dalam _file_:
 
 * `cypress/cucumber-reports/cucumber-htmlreport.html`
 
-Buka file tersebut di browser untuk melihat hasil visualisasi test.
+Buka _file_ tersebut di _browser_ untuk melihat hasil visualisasi _test_.
 
 ---
 
-## 🔧 Tools & Teknologi
+## 🔧_ Tools_ & Teknologi
 
 * **Cypress**
 * **Cucumber (cypress-cucumber-preprocessor)**
 * **JavaScript (ES6+)**
+
+---
+
+## 📌 Catatan
+
+* _Test_ dapat dijalankan dalam _**headless**_ atau _**headful mode**._
+* Penulisan _test_ menggunakan **Gherkin syntax** agar mudah dibaca oleh semua pihak_ (technical & non-technical)_.
+* _Screenshot_ otomatis dan _error logging_ bisa dikonfigurasi pada `hooks.js`.
+
+---
