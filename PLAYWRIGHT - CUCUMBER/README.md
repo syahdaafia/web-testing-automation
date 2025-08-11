@@ -1,5 +1,5 @@
-# 🧪 E2E Testing - _Ecommerce Product Purchase
-_
+# 🧪 E2E Testing - _Ecommerce Product Purchase_
+
 Proyek ini merupakan implementasi _**end-to-end testing**_ menggunakan **Cypress** dan **Cucumber** untuk memverifikasi fitur pembelian produk pada situs [https://rahulshettyacademy.com/client](https://rahulshettyacademy.com/client).
 
 ---
